@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+  }
+  
+  /* Prevent page breaks inside important sections */
+  .print-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Force page break before new major sections */
+  .print-page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+  
+  /* Keep recommendation cards together */
+  .recommendation-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  /* Adjust margins for print */
+  @page {
+    margin: 1.5cm;
+  }
+  
+  /* Hide interactive elements */
+  button {
+    display: none !important;
+  }
+  
+  /* Ensure colors print properly */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
